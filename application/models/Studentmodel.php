@@ -258,6 +258,7 @@ public function update_assignment_model($result,$student_assignment_upload_id)
 		$this->db->select('*');
 		$this->db->from('student_assignment_upload');
 		$this->db->where('student_email',$email);
+		
 		return $this->db->get()->result();
 	}
 	public function student_seminar_upload_model()

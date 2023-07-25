@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Stretch an Education Category Bootstrap responsive WebTemplate | Courses :: w3layouts</title>
+	<title>Student</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<meta name="keywords" content="Stretch a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<!-- <li><a href="<?php echo base_url('index.php/Studentcontroller/assignment_topic')?>">  Assignment Topics</a></li>
 
  -->
- 										<li><a href="<?php echo base_url('index.php/Studentcontroller/subject_assignment')?>"> Manage Assignment </a></li>
+ 										<li><a href="<?php echo base_url('index.php/Studentcontroller/subject_assignment')?>"> Add Assignment </a></li>
 										
 										<li><a href="<?php echo base_url('index.php/Studentcontroller/Manage_Assignment')?>"> Manage Assignment </a></li>
 										

@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<label style="color: white">Student Email</label>
 						<input type="email"  name="email" placeholder="Student Email" required="" /style="width: 850px;height: 40px"><br><br>
 						<label style="color: white">Parent Password</label>
-			<input type="text" name="password" placeholder="Parent Password" required="" /style="width: 850px;height: 40px">
+			<input type="password" name="password" placeholder="Parent Password" required="" /style="width: 880px;height: 40px">
 
 			<input type="submit" value="Submit" class="button-w3layouts hvr-rectangle-out"><br><br>
 			<h3><a href="<?php echo base_url('index.php/Indexcontroller/index')?>" align="center"><img  src="<?php echo base_url('Asset/Admin/images/home.png')?>" style="height: 40px;width: 40px" ></a></h3>

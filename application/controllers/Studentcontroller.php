@@ -198,25 +198,28 @@ class Studentcontroller extends CI_Controller
 						if($exe2==1)
 						{
 							echo "<script>alert('Submitted Successfully!!!')</script>";
-							$this->assignment_topic();
+							$this->subject_assignment()
+;
 						}
 						else
 						{
 							echo "<script>alert('Failed To Update!!')</script>";
-							$this->assignment_topic();
+							$this->subject_assignment()
+;
 						}
 				}
 				else
 				{
 		
 					echo "<script>alert('failed')</script>";
-					$this->assignment_topic();
+					$this->subject_assignment();
+
 				}
 			}
 			else
 			{
 				echo "<script>alert('Invalid Image')</script>";
-					$this->assignment_topic();
+					$this->subject_assignment();
 			}
 
 //date check
@@ -224,7 +227,7 @@ class Studentcontroller extends CI_Controller
 		else
 		{
 			echo "<script>alert('Submission date is over')</script>";
-			$this->assignment_topic();
+			$this->subject_assignment();
 		}
 			//date check
 		}
@@ -296,25 +299,25 @@ class Studentcontroller extends CI_Controller
 						if($exe2==1)
 						{
 							echo "<script>alert('Submitted Successfully!!!')</script>";
-							$this->seminar_topic();
+							$this->subject_seminar();
 						}
 						else
 						{
 							echo "<script>alert('Failed To Update!!')</script>";
-							$this->seminar_topic();
+							$this->subject_seminar();
 						}
 				}
 				else
 				{
 		
 					echo "<script>alert('failed')</script>";
-					$this->seminar_topic();
+					$this->subject_seminar();
 				}
 			}
 			else
 			{
 				echo "<script>alert('Invalid Image')</script>";
-					$this->seminar_topic();
+					$this->subject_seminar();
 			}
 
 			//date check
@@ -322,7 +325,7 @@ class Studentcontroller extends CI_Controller
 		else
 		{
 			echo "<script>alert('Submission date is over')</script>";
-			$this->seminar_topic();
+			$this->subject_seminar();
 		}
 			//date check
 	}

@@ -64,13 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li><a href="<?php echo base_url('index.php/Admincontroller/manage_department')?>">Manage Department</a></li>
 								</ul>
 							</li>
-							<!-- <li class="dropdown menu__item">
-								<a href="#" class="dropdown-toggle menu__link"  data-toggle="dropdown" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">Exam<span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="<?php echo base_url('index.php/Admincontroller/exam')?>">Add Exam</a></li>
-									<li><a href="<?php echo base_url('index.php/Admincontroller/manage_exam')?>">Manage Exam</a></li>
-								</ul>
-							</li> -->
+							
 							
 							<li class="dropdown menu__item">
 								<a href="#" class="dropdown-toggle menu__link"  data-toggle="dropdown" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">Subject<span class="caret"></span></a>
@@ -109,23 +103,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</ul>
 							</li>
 
+</li>
 
-							<!-- <li class="dropdown menu__item"> -->
-								<li>
-								<!-- <a href="<?php echo base_url('index.php/Admincontroller/timetable')?>"  data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">TimeTable (internal)</a>
-								department_timetable -->
-								<a href="<?php echo base_url('index.php/Admincontroller/department_timetable')?>"  data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">TimeTable (internal)</a>
+								<li class="dropdown menu__item">
+									<a href="#" class="dropdown-toggle menu__link"  data-toggle="dropdown" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">TimeTable (internal)<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+									
+										<li><a href="<?php echo base_url('index.php/Admincontroller/department_timetable')?>"  data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">Add TimeTable</a></li>
+										<li><a href="<?php echo base_url('index.php/Admincontroller/manage_timetable_subject')?>">Manage TimeTable</a></li>
+									
+									</ul>
+								</li>
+							
+
+							<li class="dropdown menu__item">
+									<a href="#" class="dropdown-toggle menu__link"  data-toggle="dropdown" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">TimeTable (Semester)<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+									
+										<li><a href="<?php echo base_url('index.php/Admincontroller/timetable_semester')?>"  data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">Add TimeTable</a></li>
+										<li><a href="<?php echo base_url('index.php/Admincontroller/manage_timetable_semester_subject')?>">Manage TimeTable</a></li>
+									
+									</ul>
+								</li>
 								
-							</li>
 
-							<!-- <li class="dropdown menu__item"> -->
-								<li>
+							
+								<!-- <li>
 								<a href="<?php echo base_url('index.php/Admincontroller/timetable_semester')?>"  data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">TimeTable (Semester)<span class="caret"></span></a>
-								<!-- <ul class="dropdown-menu">
-									<li><a href="<?php echo base_url('index.php/Admincontroller/timetable_semester')?>">Add TimeTable</a></li>
-									<li><a href="<?php echo base_url('index.php/Admincontroller/manage_timetable_semester')?>">Manage Timetable</a></li>
-								</ul> -->
-							</li>
+								
+							</li> -->
 
 
 							<li class="dropdown menu__item">

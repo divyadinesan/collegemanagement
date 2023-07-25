@@ -1,5 +1,5 @@
 <?php
-$this->load->view('Student/Layout/header');
+$this->load->view('Student/Layout/parent_header');
 ?>
 	<div class="">
 		<div class="container">

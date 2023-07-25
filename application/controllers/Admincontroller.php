@@ -16,6 +16,19 @@ class Admincontroller extends CI_Controller
 			$this->Admin_login();
 		}
 	}
+	public function manage_timetable_subject()
+{
+	if($this->session->has_userdata('Email'))
+		{
+			$this->load->model('Adminmodel');
+			$Arrdata['department']=$this->Adminmodel->admin_department_fetch_model();
+			$this->load->view('Admin/manage_timetable_subject',$Arrdata);
+		}
+		else
+		{
+			$this->Admin_login();
+		}
+}
 	public function department_syllabus()
 	{
 		if($this->session->has_userdata('Email'))
@@ -23,6 +36,85 @@ class Admincontroller extends CI_Controller
 			$this->load->model('Adminmodel');
 			$Arrdata['department']=$this->Adminmodel->admin_department_fetch_model();
 			$this->load->view('Admin/department_syllabus',$Arrdata);
+		}
+		else
+		{
+			$this->Admin_login();
+		}
+	}
+	public function sem_syllabus_timetable($department_id)
+	{
+		if($this->session->has_userdata('Email'))
+		{
+			$this->load->model('Adminmodel');
+			$Arrdata['department']=$this->Adminmodel->department_fetch_id_model($department_id);
+			$this->load->view('Admin/sem_syllabus_timetable',$Arrdata);
+		}
+		else
+		{
+			$this->Admin_login();
+		}
+	}
+	public function time_table_fetch($sem,$department_id)
+	{
+		if($this->session->has_userdata('Email'))
+		{
+			$this->load->model('Adminmodel');
+			$Arrdata['time_table']=$this->Adminmodel->time_table_fetch_model($sem,$department_id);
+			$this->load->view('Admin/time_table_fetch',$Arrdata);
+		}
+		else
+		{
+			$this->Admin_login();
+		}
+	}
+	public function timetable_edit($time_table_id)
+	{
+		if($this->session->has_userdata('Email'))
+		{
+			$this->load->model('Adminmodel');
+			$Arrdata['time_table']=$this->Adminmodel->timetable_fetch_model($time_table_id);
+			$this->load->view('Admin/timetable_edit',$Arrdata);
+		}
+		else
+		{
+			$this->Admin_login();
+		}
+	}
+	public function timetable_update($time_table_id)
+	{
+		if($this->session->has_userdata('Email'))
+		{
+			
+		$exam_time=$this->input->post('exam_time');
+		$date=$this->input->post('date');
+		$Arrdata=array('Exam_time'=>$exam_time,'Exam_date'=>$date);
+		$this->load->model('Adminmodel');
+		$execute=$this->Adminmodel->timetable_update_model($time_table_id,$Arrdata);
+			if($execute)
+		{
+			echo "<script>alert('Updated Successfully!!!')</script>";
+			
+			$this->manage_timetable_subject();
+		}
+		else
+		{
+			echo "<script>alert('Failed To Update!!')</script>";
+			$this->manage_timetable_subject();
+		}
+		}
+		else
+		{
+			$this->Admin_login();
+		}
+	}
+	public function manage_timetable_semester_subject()
+	{
+		if($this->session->has_userdata('Email'))
+		{
+			$this->load->model('Adminmodel');
+			$Arrdata['department']=$this->Adminmodel->admin_department_fetch_model();
+			$this->load->view('Admin/manage_timetable_semester_subject',$Arrdata);
 		}
 		else
 		{
@@ -50,6 +142,19 @@ class Admincontroller extends CI_Controller
 			$this->load->model('Adminmodel');
 			$Arrdata['department']=$this->Adminmodel->department_fetch_id_model($department_id);
 			$this->load->view('Admin/sem_syllabus',$Arrdata);
+		}
+		else
+		{
+			$this->Admin_login();
+		}
+	}
+	public function semester_timetable($department_id)
+	{
+		if($this->session->has_userdata('Email'))
+		{
+			$this->load->model('Adminmodel');
+			$Arrdata['timetable']=$this->Adminmodel->semester_timetable_model($department_id);
+			$this->load->view('Admin/semester_timetable',$Arrdata);
 		}
 		else
 		{
@@ -1294,6 +1399,44 @@ public function manage_exam()
 					$this->timetable_semester();
 			}
 		}
+
+    
+    public function semester_update($sem_timetable_id)
+    {
+    	$image=$_FILES['timetable']['name'];
+				if($image!="")
+				{
+					$time = Time();
+					$images = explode('.',$image);
+					$Add_photos =$time.'.'.end($images);
+					$config['upload_path']= './Asset/Admin/semester_timetable';
+					$config['allowed_types']= 'pdf';
+					$config['file_name'] = $Add_photos;
+					$this->load->library('upload', $config);
+					$this->upload->initialize($config);
+						if($this->upload->do_upload('timetable'))
+						{
+							$result=array('time_table_image'=>$Add_photos);
+							$this->load->model('Adminmodel');
+							$exe=$this->Adminmodel->timetable_semester_update($result,$sem_timetable_id);
+							if($exe)
+							{
+								echo "<script>alert('Successfully Updated ')</script>";
+								$this->manage_timetable_semester_subject();
+							}
+							else
+							{
+								echo "<script>alert('Failed to update')</script>";
+								$this->manage_timetable_semester_subject();
+							}
+						}
+						else
+						{
+							echo "<script>alert('Invalid pdf')</script>";
+							$this->manage_timetable_semester_subject();
+						}
+					}
+    }
 
 
 

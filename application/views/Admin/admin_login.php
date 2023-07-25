@@ -32,12 +32,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<h3>Login Now</h3>
 		<br>
 		<form action="<?php echo base_url('index.php/Admincontroller/Admin_login_insrt')?>" method="post">
-						<input type="email"  name="Email" placeholder="Email" required="" />
-			<input type="text"  name="password" placeholder="Password" required="" />
+						<input type="email"  name="Email" placeholder="Email" required="" / ><br><br>
+			<input type="password"  name="password" placeholder="Password" required="" / style="width: 880px;height: 40px">
 
 			<input type="submit" value="Submit" class="button-w3layouts hvr-rectangle-out"><br><br>
 			<h3><a href="<?php echo base_url('index.php/Indexcontroller/index')?>" align="center"><img  src="<?php echo base_url('Asset/Admin/images/home.png')?>" style="height: 40px;width: 40px" ></a></h3>
 		</form>	
+
+
+
 
 	</div>
 	</div>

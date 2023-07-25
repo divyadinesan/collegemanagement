@@ -381,6 +381,41 @@ $this->db->where('holiday_id',$holiday_delete);
 	{
 		return $this->db->insert('semester_timetable',$result);
 	}
+	public function time_table_fetch_model($sem,$department_id)
+	{
+		$this->db->select('*');
+	$this->db->from('time_table');
+	$this->db->join('subject','subject.subject_id=time_table.subject_id');
+
+	$this->db->where('time_table.department_id',$department_id);
+	$this->db->where('time_table.semester',$sem);
+	return $this->db->get()->result();
+	}
+	public function timetable_fetch_model($time_table_id)
+	{
+		$this->db->select('*');
+	$this->db->from('time_table');
+	$this->db->join('subject','subject.subject_id=time_table.subject_id');
+	$this->db->where('time_table_id',$time_table_id);
+	return $this->db->get()->result();
+	}
+	public function timetable_update_model($time_table_id,$Arrdata)
+	{
+		$this->db->where('time_table_id',$time_table_id);
+		return $this->db->update('time_table',$Arrdata);
+	}
+	public function semester_timetable_model($department_id)
+	{
+		$this->db->select('*');
+	$this->db->from('semester_timetable');
+	$this->db->where('department_id',$department_id);
+	return $this->db->get()->result();
+	}
+	public function timetable_semester_update($result,$sem_timetable_id)
+	{
+		$this->db->where('sem_timetable_id',$sem_timetable_id);
+		return $this->db->update('semester_timetable',$result);
+	}
 
 
 

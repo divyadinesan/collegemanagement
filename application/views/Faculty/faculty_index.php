@@ -35,14 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<h3>Sign In</h3>
 		<br>
 
-<!-- <form action="<?php echo base_url('index.php/Facultycontroller/faculty_login_insrt')?>" method="post">
-									<input type="email" name="email" placeholder="E-mail" required="">
-									<input type="password" name="password" placeholder="Password" required="">
-									<div class="tp">
-										<input type="submit" value="Sign In">
-									</div><br>
-									<a href="<?php echo base_url('index.php/Indexcontroller/index')?>" align="center"><h3 style="padding-left: 100px"><img src="<?php echo base_url('Asset/Student/images/home.jpg')?>" alt=" " class="img-responsive" / style="height: 90px"></h3></a>
-								</form> -->
+
 
 		<form action="<?php echo base_url('index.php/Facultycontroller/faculty_login_insrt')?>" method="post">
 			<label style="color: white">Faculty Email</label>

@@ -60,6 +60,8 @@ tr:nth-child(even){background-color: #f2f2f2}
       <?php
       $assigment_mark=0;
       foreach ($assignment as $asgmnt) {
+        if($asgmnt->assignment_mark!='Pending')
+        {
         if($intrnl->subject_id==$asgmnt->subject_id)
         {
           $assigment_mark=$assigment_mark+$asgmnt->assignment_mark;
@@ -72,6 +74,8 @@ tr:nth-child(even){background-color: #f2f2f2}
        <?php
       $seminar_mark=0;
       foreach ($seminar as $smnr) {
+        if($smnr->seminar_mark!='Pending')
+        {
         if($intrnl->subject_id==$smnr->subject_id)
         {
           $seminar_mark=$seminar_mark+$smnr->seminar_mark;
@@ -100,6 +104,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     </tr>
     <?php
     $i++;
+}
+}
 }
 ?>
 
